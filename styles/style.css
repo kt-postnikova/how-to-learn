@@ -16,7 +16,6 @@ h1, h2, h3, h4, p {
     position: relative;
     flex-direction: column;
     justify-content: center;
-    background-color: bisque;
     height: 100vh;
     max-height: 756px;
     background-color: #f2f2f2;
@@ -171,9 +170,8 @@ h1, h2, h3, h4, p {
 }
 
 .table__heading {
-    margin-bottom: 20px;
     line-height: 1.15;
-    font-size: 18px;
+    font-size: 24px;
     font-weight: 700;
 }
 
@@ -255,19 +253,6 @@ h1, h2, h3, h4, p {
 .table__cell_place_kaufman {
     width: 200px;
     justify-content: space-around;
-}
-
-.table__heading {
-    margin-bottom: 20px;
-    line-height: 1.15;
-    font-size: 24px;
-    font-weight: 600;
-}
-
-.table__text {
-    line-height: 1.2;
-    font-size: 18px;
-    font-weight: normal;
 }
 
 .kaufman__triangle {
