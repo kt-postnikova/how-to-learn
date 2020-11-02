@@ -6,16 +6,12 @@
     box-sizing: border-box;
 }
 
-h1, h2, h3, h4, p {
-    padding: 0;
-    margin: 0;
-}
-
 .header {
     display: flex;
     position: relative;
     flex-direction: column;
     justify-content: center;
+    overflow: hidden;
     height: 100vh;
     max-height: 756px;
     background-color: #f2f2f2;
@@ -48,6 +44,8 @@ h1, h2, h3, h4, p {
     line-height: 25px;
     width: 388px;
     font-size: 18px;
+    margin: 0;
+    z-index: 2;
 }
 
 .header__link {
@@ -78,7 +76,6 @@ h1, h2, h3, h4, p {
 
 .description {
     margin-top: 100px;
-    max-height: 500px;
 }
 
 .two-columns {
@@ -94,20 +91,21 @@ h1, h2, h3, h4, p {
     font-size: 18px;
     font-weight: normal;
     color: #2f80ed;
+    margin: 0;
 }
 
 .two-columns__main-text {
     width: 80%;
     min-width: 784px;
-    z-index: 2; /* Чтобы при увеличении страницы квадрат header__square-pic не перекрывал текст */
 }
 
 .two-columns__paragraph {
     line-height: 34px;
     font-size: 24px;
+    margin: 0;
 }
 
-.second-paragraph-position {
+.two-columns__paragraph:nth-of-type(2n) {
     margin-top: 30px;
     margin-bottom: 30px;
 }
@@ -123,7 +121,6 @@ h1, h2, h3, h4, p {
     flex-direction: column;
     margin-top: 100px;
     margin-bottom: 100px;
-    max-height: 600px;
 }
 
 .section-title {
@@ -142,43 +139,32 @@ h1, h2, h3, h4, p {
 }
 
 .table {
-    margin: auto;
-}
-
-.table_place_digits {
-    width: 1100px;
-    padding-top: 60px;
-    margin-bottom: 0;
-}
-
-.table__row {
     display: flex;
     justify-content: space-between;
-}
-
-.table__row_place_digits {
+    flex-wrap: wrap;
     margin: auto;
-    margin-bottom: 60px;
+    padding: 0;
+    list-style: none;
+    width: 1100px;
 }
 
-.second-table-row-position {
-    margin-top: 60px;
-}
-
-.table__cell_place_digits {
+.table__cell {
     width: 250px;
+    margin-top: 60px;
 }
 
 .table__heading {
     line-height: 1.15;
     font-size: 24px;
     font-weight: 700;
+    margin: 0;
 }
 
 .table__text {
-    margin-top: 20px;
     line-height: 1.2;
     font-size: 18px;
+    margin-top: 20px;
+    margin-bottom: 0;
 }
 
 .feynman {
@@ -188,7 +174,6 @@ h1, h2, h3, h4, p {
     background-color: #f2f2f2;
     min-height: 790px;
     z-index: 1;
-    max-height: 600px;
 }
 
 .feynman__title {
@@ -205,7 +190,6 @@ h1, h2, h3, h4, p {
 .feynman__subtitle {
     line-height: 51px;
     font-size: 36px;
-    font-weight: 500;
     margin: auto;
     margin-top: 70px;
     z-index: 1;
@@ -222,7 +206,8 @@ h1, h2, h3, h4, p {
 }
 
 .feynman__pic {
-    width: 800px;
+    width: 867px;
+    height: 637px;
     position: absolute;
     bottom: 0;
     left: 0;
@@ -236,23 +221,25 @@ h1, h2, h3, h4, p {
     flex-direction: column;
     background-color: #1f1f1f;
     color: #fff;
-    max-height: 700px;
 }
 
-.section-title_place_kaufman {
+.section-title_theme_dark {
     padding-top: 90px;
-}
-
-.table_place_kaufman {
-    width: 1100px;
-    margin-bottom: 90px;
-    padding-top: 80px;
     z-index: 1;
 }
 
-.table__cell_place_kaufman {
+.section-subtitle_theme_dark {
+    margin-top: 20px;
+}
+
+.table_theme_dark {
+    width: 1100px;
+    margin-bottom: 90px;
+    z-index: 1;
+}
+
+.table__cell_theme_dark {
     width: 200px;
-    justify-content: space-around;
 }
 
 .kaufman__triangle {
@@ -262,6 +249,7 @@ h1, h2, h3, h4, p {
     height: 877px;
     position: absolute;
     right: -210px;
+    top: 0;
     z-index: 0;
 }
 
@@ -270,7 +258,7 @@ h1, h2, h3, h4, p {
     color: #fff;
     padding-top: 60px;
     padding-bottom: 40px;
-    max-height: 200px;
+    box-sizing: border-box;
 }
 
 .footer__columns {
@@ -278,10 +266,11 @@ h1, h2, h3, h4, p {
     width: 90%;
     min-height: 200px;
     margin: auto;
+    min-height: 250px;
     justify-content: space-between;
 }
 
-.footer__column_flex-basis {
+.footer__column_content_copyright {
     flex-basis: 711px;
     display: flex;
     justify-content: space-between;
@@ -304,6 +293,7 @@ h1, h2, h3, h4, p {
 }
 
 .footer__column-heading {
+    margin-top: 0;
     margin-bottom: 20px;
 }
 
@@ -312,6 +302,9 @@ h1, h2, h3, h4, p {
     flex-direction: column;
     font-size: 18px;
     line-height: 30px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
 .footer a {
@@ -319,7 +312,7 @@ h1, h2, h3, h4, p {
     color: #fff;
 }
 
-.footer__social-icons {
+.footer__social-icon {
     margin-right: 10px;
     text-decoration: none;
     color: #fff;
