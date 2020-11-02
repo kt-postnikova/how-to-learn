@@ -230,6 +230,7 @@
 
 .section-subtitle_theme_dark {
     margin-top: 20px;
+    z-index: 1;
 }
 
 .table_theme_dark {
@@ -306,13 +307,11 @@
     margin: 0;
 }
 
-.footer a {
+.footer__column-link {
     text-decoration: none;
     color: #fff;
 }
 
 .footer__social-icon {
     margin-right: 10px;
-    text-decoration: none;
-    color: #fff;
 }
